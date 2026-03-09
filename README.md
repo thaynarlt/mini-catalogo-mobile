@@ -1,50 +1,57 @@
-# Welcome to your Expo app 👋
+# Mini Catalogo Mobile
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Aplicativo mobile de mini catalogo de produtos desenvolvido com React Native, Expo e TypeScript.
 
-## Get started
+## Sobre o Projeto
 
-1. Install dependencies
+O app permite visualizar uma lista de produtos de hardware, acessar os detalhes de cada produto e ver informacoes de perfil do usuario.
+
+## Tecnologias
+
+- React Native
+- Expo (Expo Router)
+- TypeScript
+
+## Estrutura de Navegacao
+
+- **Stack Navigation** — navegacao principal entre telas (lista -> detalhes)
+- **Tab Navigation** — alternancia entre as abas Produtos e Perfil
+
+As rotas sao organizadas em arquivos separados utilizando o sistema de file-based routing do Expo Router.
+
+## Telas
+
+- **Lista de Produtos** — exibe 3 produtos com imagem, nome e preco. Ao tocar em um produto, navega para a tela de detalhes.
+- **Detalhes do Produto** — exibe imagem, nome, preco e descricao do produto selecionado.
+- **Perfil** — exibe informacoes do usuario (foto, nome, email e biografia) em uma aba separada.
+
+## Estrutura de Pastas
+
+```
+app/
+  _layout.tsx            # Stack Navigator (raiz)
+  (tabs)/
+    _layout.tsx          # Tab Navigator
+    index.tsx            # Tela de Lista de Produtos
+    profile.tsx          # Tela de Perfil
+  product/
+    [id].tsx             # Tela de Detalhes do Produto
+data/
+  products.ts            # Dados e tipagem dos produtos
+```
+
+## Como Executar
+
+1. Instale as dependencias:
 
    ```bash
    npm install
    ```
 
-2. Start the app
+2. Inicie o app:
 
    ```bash
    npx expo start
    ```
 
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+3. Escaneie o QR code com o Expo Go no celular ou use um emulador.
